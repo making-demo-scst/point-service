@@ -1,0 +1,8 @@
+applications:
+- name: point-svc
+  buildpack: java_buildpack
+  memory: 512m
+  path: target/point-service-0.0.1-SNAPSHOT.jar
+  services:
+  - rabbit-binder # cf create-service cloudamqp lemur rabbit-binder
+  - point-db # cf create-service cleardb spark point-db
